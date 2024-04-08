@@ -1,0 +1,9 @@
+.sent {
+    color: green;
+    text-align: right;
+}
+
+.received {
+    color: blue;
+    text-align: left;
+}
