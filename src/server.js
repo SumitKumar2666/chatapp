@@ -17,10 +17,10 @@ io.on('connection', (socket) => {
     // When a user logs in with a name
     socket.on('register', (userName) => {
         onlineUsers[userName] = socket.id;
-        io.emit('online users', Object.keys(onlineUsers)); // Send updated list of online users
+        io.emit('online users', Object.keys(onlineUsers)); // Sending updated list of online users
     });
 
-    // Handling private messaging with names
+    // Handling private messaging with contact names
     socket.on('private message', ({ senderName, receiverName, message }) => {
         if (onlineUsers[receiverName]) {
         io.to(onlineUsers[receiverName]).emit('private message', { senderName, message });
@@ -28,10 +28,11 @@ io.on('connection', (socket) => {
     });
 
     socket.on('disconnect', () => {
-        // Remove the user from onlineUsers
+        // Removing the user from onlineUsers
         const userName = Object.keys(onlineUsers).find(name => onlineUsers[name] === socket.id);
         delete onlineUsers[userName];
-        io.emit('online users', Object.keys(onlineUsers)); // Update list of online users
+        console.log(`User ${userName} disconnected.`);
+        io.emit('online users', Object.keys(onlineUsers)); // Updating list of online users
     });
 
     // socket.on('chat message', (msg) => {
