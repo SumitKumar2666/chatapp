@@ -5,8 +5,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["NodeJs", "Socket.io", "Express"],
+  "keywords": [
+    "NodeJs",
+    "Socket.io",
+    "Express"
+  ],
   "author": "SumitKumar",
   "license": "ISC",
-  "description": "A chat application where users can communicate with each other using sockets."
+  "description": "A chat application where users can communicate with each other using sockets.",
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  }
 }
