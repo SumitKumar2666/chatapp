@@ -1,0 +1,12 @@
+{
+  "name": "chatapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["NodeJs", "Socket.io", "Express"],
+  "author": "SumitKumar",
+  "license": "ISC",
+  "description": "A chat application where users can communicate with each other using sockets."
+}
